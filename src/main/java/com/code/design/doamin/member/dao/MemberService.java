@@ -1,6 +1,9 @@
-package com.code.design;
+package com.code.design.doamin.member.dao;
 
 import java.io.IOException;
+
+import com.code.design.doamin.member.dao.MemberRepository;
+import com.code.design.doamin.member.domain.Member;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

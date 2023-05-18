@@ -1,5 +1,7 @@
-package com.code.design;
+package com.code.design.doamin.member.exception;
 
+import com.code.design.doamin.member.dao.MemberRepository;
+import com.code.design.doamin.member.domain.Member;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

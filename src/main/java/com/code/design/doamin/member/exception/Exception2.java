@@ -1,5 +1,6 @@
-package com.code.design;
+package com.code.design.doamin.member.exception;
 
+import com.code.design.doamin.member.domain.Member;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Service;

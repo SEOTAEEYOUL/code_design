@@ -8,6 +8,12 @@ spring:
       ddl-auto: create
     show-sql: true
     open-in-view: false
+  h2:
+    console:
+      # devtools 의 환경에서는 true 이므로, 명시적으로 false 로 설정함
+      enabled: true
+  # timezone: UTC
+  timezone: Asia/Seoul
 
 management:
   endpoints:
