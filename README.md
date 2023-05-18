@@ -128,8 +128,9 @@ public class DeviceController {
 3. try catch를 사용하게 된다면, 더 구체적인 예외를 발생시키는것이 좋다. (Exception 직접 정의 or Error Message를 명확하게)
 
 ### Check Exception VS UnChecked Exception
-| | Checked Exception | Uncheked Exception |  
+| 항목 | Checked Exception | Uncheked Exception |    
 |:---|:---|:---|  
-| 처리 여부 | 반드시 예외 처리 해야함 | 예외 처리 하지 않아도 됨 |  
+| 처리 여부            | 반드시 예외 처리 해야함 | 예외 처리 하지 않아도 됨 |  
 | 트랜잭션 Rollback 여부 | Rollback 안됨 | Rollback 진행 |  
-| 대표 Exception | IOException, </br> SQLException | NullPointerException, </br> IllegalArgmentException |  
+| 대표 Exception     | IOException, </br> SQLException | NullPointerException, </br> IllegalArgmentException |  
+
