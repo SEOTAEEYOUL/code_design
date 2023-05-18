@@ -63,6 +63,7 @@ Exception 처리를 왜 해야할까요?
 Check Exception VS UnChecked Exception  
 
 ##  오류 코드 코드보다 예외를 사용하라
+- Clean Code 예제
 ```java
 public class DeviceController {
     ...
@@ -96,7 +97,8 @@ public class DeviceController {
 	public void sendShutDown() {
 		try {
 			tryToShutDown();
-		} catch (DeviceShutDownError e) {
+		}
+        catch (DeviceShutDownError e) {          
 			// 적절한 Exception을 발생시키는것이 더 바람직하다.
             logger.log(e);
 		}
