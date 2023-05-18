@@ -63,7 +63,7 @@ Exception 처리를 왜 해야할까요?
 Check Exception VS UnChecked Exception  
 
 ##  오류 코드 코드보다 예외를 사용하라
-- Clean Code 예제
+### Clean Code 예제
 ```java
 public class DeviceController {
     ...
@@ -91,6 +91,7 @@ public class DeviceController {
 - 비지니스 로직과 오류 처리 코드가 함께 있어 코드가 복잡하하다
 - 무슨 오류가 있는지 명확하게 파악이 힘들다.
 
+### 예외를 사용하여 로직은 끊음
 ```java
 public class DeviceController {
 	...
@@ -120,3 +121,10 @@ public class DeviceController {
 ```
 - 비지니스 코드와 오류 처리 코드가 분리되어 가독성이 좋다
 - 무슨 예외가 왜 발생하는지 명확해짐
+
+#### Try/Catch
+1. try catch를 최대한 지양해라.(로직으로 예외 처리가 가능하다면)
+2. try catch를 하는데 아무런 처리가 없다면 로그라도 추가하자
+3. try catch를 사용하게 된다면, 더 구체적인 예외를 발생시키는것이 좋다. (Exception 직접 정의 or Error Message를 명확하게)
+
+### Check Exception VS UnChecked Exception

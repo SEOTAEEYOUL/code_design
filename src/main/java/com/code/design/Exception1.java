@@ -17,7 +17,8 @@ public class Exception1 {
         try {
             final Member member = memberRepository.findById(id).get();
             name = member.getName();
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             // 추가적인 작업을 진행하기 위해...
             log.error(e.getMessage());
         }
@@ -30,7 +31,8 @@ public class Exception1 {
         try {
             final Member member = memberRepository.findById(id).get();
             name = member.getName();
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             e.printStackTrace();
             log.error(e.getMessage());
         }
@@ -44,7 +46,8 @@ public class Exception1 {
         try {
             final Member member = memberRepository.findById(id).get();
             name = member.getName();
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             e.printStackTrace();
             throw new IllegalArgumentException("해당 id: " + id + " 의 member의 name은 null 입니다."); // 더 구체적인 예외를 직접 정의해서 사용해도 무방
         }
@@ -60,7 +63,8 @@ public class Exception1 {
 
         if (member != null) {
             name = member.getName();
-        } else {
+        }
+        else {
             name = "Default Name";
         }
         System.out.println(name);
