@@ -34,6 +34,13 @@ public class Refund {
     private Order order;
 
 
+    // 1. account -> null, creditCard -> notnull
+    // 2. account -> notnull, creditCard -> null
+    // 3. account -> null, creditCard -> null
+    // 4. account -> notnull, creditCard -> notnull
+
+
+    // builderClassName = "환불사유를적음"
     @Builder(builderClassName = "ByAccountBuilder", builderMethodName = "ByAccountBuilder") // 계좌 번호 기반 환불, Builder 이름을 부여해서 그에 따른 책임 부여, 그에 따른 필수 인자값 명확
     public Refund(Account account, Order order) {
         Assert.notNull(account, "account must not be null");
@@ -43,7 +50,7 @@ public class Refund {
         this.account = account;
     }
 
-    @Builder(builderClassName = "ByCreditBuilder", builderMethodName = "ByCreditBuilder")  // 신용 카드 기반 환불, Builder 이름을 부여해서 그에 따른 책임 부여, 그에 따른 필수 인자값 명확
+    @Builder(builderClassName = "ByCreditCardBuilder", builderMethodName = "ByCreditCardBuilder")  // 신용 카드 기반 환불, Builder 이름을 부여해서 그에 따른 책임 부여, 그에 따른 필수 인자값 명확
     public Refund(CreditCard creditCard, Order order) {
         Assert.notNull(creditCard, "creditCard must not be null");
         Assert.notNull(order, "order must not be null");

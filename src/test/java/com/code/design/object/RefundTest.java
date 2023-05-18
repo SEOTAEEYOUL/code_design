@@ -57,6 +57,7 @@ class RefundTest {
                 .isInstanceOf(IllegalArgumentException.class);
     }
 
+
     @Test
     public void ByAccountBuilder_test() {
         final Refund refund = Refund.ByAccountBuilder()
@@ -69,6 +70,7 @@ class RefundTest {
     }
 
 
+    // 계좌번호 환불의 경우 account null 보내는 경우
     @Test
     public void ByCreditBuilder_test_account_null이면_exception() {
         thenThrownBy(() -> Refund.ByAccountBuilder()
@@ -80,12 +82,34 @@ class RefundTest {
     }
 
     @Test
-    public void ByCreditBuilder_test_order_null이면_exception() {
-        thenThrownBy(() -> Refund.ByCreditBuilder()
+    public void refund_신용_카드_환불() {
+        final Refund refund = Refund.ByCreditCardBuilder()
                 .creditCard(creditCard)
-                .order(null)
-                .build()
+                .order(order)
+                .build();
+
+        then(refund.getAccount()).isNull();;
+        then(refund.getCreditCard()).isEqualTo(creditCard);
+        then(refund.getOrder()).isEqualTo(order);
+    }
+
+    @Test
+    public void refund_신용_카드_환불_의경우_credit_card_null_보내는_경우() {
+        thenThrownBy(() -> Refund.ByCreditCardBuilder()
+                        .creditCard(null)
+                        .order(order)
+                        .build()
         )
                 .isInstanceOf(IllegalArgumentException.class);
     }
+
+//    @Test
+//    public void ByCreditBuilder_test_order_null이면_exception() {
+//        thenThrownBy(() -> Refund.ByCreditcBuilder()
+//                .creditCard(creditCard)
+//                .order(null)
+//                .build()
+//        )
+//                .isInstanceOf(IllegalArgumentException.class);
+//    }
 }
