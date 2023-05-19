@@ -23,18 +23,18 @@ public class MemberApi {
     }
 
     // rollback 진행 O
-    @PostMapping("/unchekced")
-    public Member unchekced() {
-        final Member member = memberService.createUncheckedException();
-        return member;
-    }
+//    @PostMapping("/unchekced")
+//    public Member unchekced() {
+//        final Member member = memberService.createUncheckedException();
+//        return member;
+//    }
 
     // rollback 진행 X
-    @PostMapping("/chekced")
-    public Member chekced() throws IOException {
-        final Member member = memberService.createCheckedException();
-        return member;
-    }
+//    @PostMapping("/chekced")
+//    public Member chekced() throws IOException {
+//        final Member member = memberService.createCheckedException();
+//        return member;
+//    }
 
     @PostMapping
     public Member create(@RequestBody @Valid final SignUpRequest dto) {

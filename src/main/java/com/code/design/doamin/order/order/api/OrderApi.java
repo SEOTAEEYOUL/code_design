@@ -1,12 +1,19 @@
 package com.code.design.doamin.order.order.api;
 
+import com.code.design.doamin.order.order.domain.Order;
 import com.code.design.order.OrderSheetRequest;
+import com.code.design.doamin.order.order.domain.MessageType;
+import com.code.design.doamin.order.order.domain.OrderMessage;
 import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotNull;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Set;
 
 @RestController
 @RequestMapping("/api/orders")
@@ -32,5 +39,20 @@ public class OrderApi {
     @PostMapping
     public OrderSheetRequest order(@RequestBody @Valid final OrderSheetRequest dto) {
         return dto;
+    }
+
+
+    @PostMapping
+    public Order create(@RequestBody @Valid OrderRequest request) {
+        final Order order = new Order(OrderMessage.of(request.getMessageType()));
+
+        return order;
+    }
+
+    @Getter
+    public static class OrderRequest {
+
+        @NotNull
+        private Set<MessageType> messageType;
     }
 }

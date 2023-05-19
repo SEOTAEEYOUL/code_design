@@ -170,3 +170,10 @@ public class DeviceController {
   ![card-custom-validation.png](./img/card-custom-validation.png)  
   ![bank-custom-validation.png](./img/bank-custom-validation.png)  
 
+## 자신의 책임과 의도가 명확한 객체 디자인
+### 인터페이스 이유
+- 세부 구현체를 숨기고 인터페이스를 바라보게 함으로써 클래스간의 의존관계를 줄이는 것
+- 인터페이스를 구현하는 여러 구현체가 있고 기능에 따라 적적한 구현체가 들어가서 다형성을 주기 위함
+1. 적절한 객체의 크기를 찾아가는 여정
+2. 객체는 협력 관계를 유지해야 한다
+3. 묻지 말고 시켜라!

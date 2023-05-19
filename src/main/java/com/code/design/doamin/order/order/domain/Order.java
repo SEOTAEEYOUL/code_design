@@ -27,4 +27,10 @@ public class Order {
 
     @Embedded
     private Address address;
+
+    private OrderMessage message;
+
+    public Order(OrderMessage orderMessage) {
+        this.message = orderMessage;
+    }
 }

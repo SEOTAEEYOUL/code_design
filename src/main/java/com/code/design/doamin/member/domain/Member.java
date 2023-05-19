@@ -22,6 +22,7 @@ public class Member {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+
     @NotEmpty
     @Column(name = "name", nullable = false)
     private String name;
@@ -29,6 +30,10 @@ public class Member {
     @Email
     @Column(name = "email", nullable = false, updatable = false, unique = true)
     private String email;
+
+    @Column(name = "password", nullable = false)
+    private String password;
+
 
 
 //    @OneToMany
@@ -53,6 +58,16 @@ public class Member {
         this.createAt = LocalDateTime.now( );
     }
 
+    public Member(String email, String name, String password) {
+        this.email = email;
+        this.name = name;
+        this.password = password;
+        this.createAt = LocalDateTime.now( );
+    }
 
+    public void changePassword(String password){
+        this.password = password;
+
+    }
 
 }
