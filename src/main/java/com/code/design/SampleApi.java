@@ -1,5 +1,6 @@
 package com.code.design;
 
+import com.code.design.doamin.member.domain.Member;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -15,7 +16,7 @@ public class SampleApi {
         if (value.equals("value")) {
             throw new IllegalArgumentException( );
         }
-        if (value.equals("none")) {
+        else if (value.equals("none")) {
             throw new IllegalStateException( );
         }
         else {
@@ -24,13 +25,13 @@ public class SampleApi {
         }
     }
 
-    public static class Member {
-        private String name;
-        private String email;
-
-        public Member(String name, String email) {
-            this.name  = name;
-            this.email = email;
-        }
-    }
+//    public static class Member {
+//        private String name;
+//        private String email;
+//
+//        public Member(String name, String email) {
+//            this.name  = name;
+//            this.email = email;
+//        }
+//    }
 }

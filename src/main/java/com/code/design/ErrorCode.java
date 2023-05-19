@@ -24,6 +24,8 @@ public enum ErrorCode {
     COUPON_ALREADY_USE(400, "CO001", "Coupon was already used"),
     COUPON_EXPIRE(400, "CO002", "Coupon was already expired");
 
+
+
     private final int status;
     private final String code; // HTTP Status Code
     private final String message;

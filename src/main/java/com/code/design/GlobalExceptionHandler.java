@@ -81,22 +81,26 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(response, HttpStatus.valueOf(errorCode.getStatus()));
     }
 
+
+
+
     /**
      * 모든 예외를 잡을 수 있는 핸들러
      */
-//    @ExceptionHandler(Exception.class)
-//    protected ResponseEntity<ErrorResponse> handleException(Exception e) {
-//        log.error("handleException", e);
-//        final ErrorResponse response = ErrorResponse.of(ErrorCode.INTERNAL_SERVER_ERROR);
-//
-//        return new ResponseEntity<>(response, HttpStatus.valueOf(ErrorCode.INTERNAL_SERVER_ERROR.getCode()));
-//    }
-
     @ExceptionHandler(Exception.class)
     protected ResponseEntity<ErrorResponse> handleException(Exception e) {
-        log.error("handleEntityNotFoundException", e);
+        log.error("handleException", e);
         final ErrorResponse response = ErrorResponse.of(ErrorCode.INTERNAL_SERVER_ERROR);
-        return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
-    }
 
+        return new ResponseEntity<>(response, HttpStatus.valueOf(ErrorCode.INTERNAL_SERVER_ERROR.getStatus()));
+    }
+    @ExceptionHandler({IllegalArgumentException.class,
+            IllegalStateException.class
+    })
+    protected ResponseEntity<ErrorResponse> handleIllegalArgumentException(RuntimeException e) {
+        log.error("handleIllegalArgumentException", e);
+        final ErrorResponse response = ErrorResponse.of(ErrorCode.INVALID_INPUT_VALUE);
+        return new ResponseEntity<>(response, HttpStatus.valueOf(ErrorCode.INVALID_INPUT_VALUE.getStatus()));
+        // return new ResponseEntity<>(response, HttpStatus.INVALID_INPUT_VALUE);
+    }
 }

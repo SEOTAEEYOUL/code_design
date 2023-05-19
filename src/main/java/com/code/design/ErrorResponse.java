@@ -26,6 +26,23 @@ public class ErrorResponse {
     private LocalDateTime timestamp;
 
 
+
+    private ErrorResponse(String message, int status, String code) {
+        this.message = message;
+        this.status = status;
+        this.errors = new ArrayList<>();
+        this.code = code;
+        this.timestamp = LocalDateTime.now( );
+    }
+
+//    private ErrorResponse(String message, int status, String code) {
+//        this.message = message;
+//        this.status = status;
+//        this.errors = new ArrayList<>();
+//        this.code = code;
+//        this.timestamp = LocalDateTime.now( );
+//    }
+
     private ErrorResponse(final ErrorCode code, final List<FieldError> errors) {
         this.message = code.getMessage();
         this.status = code.getStatus();
@@ -44,9 +61,14 @@ public class ErrorResponse {
         return new ErrorResponse(code, FieldError.of(bindingResult));
     }
 
-    public static ErrorResponse of(final ErrorCode code) {
-        return new ErrorResponse(code);
+
+    public static ErrorResponse of(ErrorCode code) {
+        return new ErrorResponse(code.getMessage(), code.getStatus(), code.getCode());
     }
+
+//    public static ErrorResponse of(final ErrorCode code) {
+//        return new ErrorResponse(code);
+//    }
 
     public static ErrorResponse of(final ErrorCode code, final List<FieldError> errors) {
         return new ErrorResponse(code, errors);
@@ -58,17 +80,9 @@ public class ErrorResponse {
         return new ErrorResponse(ErrorCode.INVALID_TYPE_VALUE, errors);
     }
 
-    private ErrorResponse(String message, int status, String code) {
-        this.message = message;
-        this.status = status;
-        this.errors = new ArrayList<>();
-        this.code = code;
-        this.timestamp = LocalDateTime.now( );
-    }
 
-//    public static ErrorResponse of(ErrorCode code) {
-//        return new ErrorResponse(code.getMessage(), code.getStatus(), code.getCode());
-//    }
+
+
 
     @Getter
     @NoArgsConstructor(access = AccessLevel.PROTECTED)
