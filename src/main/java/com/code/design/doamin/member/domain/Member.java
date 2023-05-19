@@ -2,6 +2,7 @@ package com.code.design.doamin.member.domain;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.*;
 
 @Getter
@@ -14,13 +15,13 @@ public class Member {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name")
+    @NotEmpty
+    @Column(name = "name", nullable = false)
     private String name;
 
     @Email
     @Column(name = "email", nullable = false, updatable = false, unique = true)
     private String email;
-
 
     @Builder
     public Member(String name, String email) {

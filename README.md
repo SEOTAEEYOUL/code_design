@@ -138,10 +138,31 @@ public class DeviceController {
 
 ## 통일된 Error Response 를 가져야하는 이유
 - 모양이 틀리면 Client 에서 처리해야 하는 
-- 200
-- 4XX
-  - 400
-  - 401
-  - 404
-- 5XX
+  - 200
+  - 4XX
+    - 400
+    - 401
+    - 404
+  - 5XX
+- 시스템 내부적인 오류는 숨기고, 가공된 메시지가 내려가는 것이 좋음
+
+## 비지니스 예외릉 위한 최상위 BusinessException 클래스
+- 풍부한 메시지, 상태값을 전달하여 추가적인 처리할 수 있도록 함
+- Exception 을 늘리기보다는 가능하면 최상위 클래스로 처리하는 것이 좋음
+### 예시
+- Exception
+  - RuntimeException
+    - BusinessException
+      - InvalidValueException
+        - CouponAlreadyUseException
+        - CouponExpireException
+      - EntityNotFoundException
+        - MemberNotFoundException
+        - CouponNotFoundException
+        - EmailNotFoundException
+
+## Custom Validation 어노테이션 만들기
+- 카드결제, 무통장 결제 예시에서는 NonNull Annotation 을 같은 항목에 적용 불가능한 경우를 예시로 들어 작성  
+- 중복된 코드 제거
+
 

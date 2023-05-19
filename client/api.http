@@ -15,3 +15,13 @@ POST localhost:8181/members/chekced
 ###
 
 GET localhost:8181/sample?value=value
+
+###
+
+POST localhost:8181/sample
+Content-Type: application/json
+
+{
+    "name": "",
+    "email": "as@as.com"
+}

@@ -3,9 +3,9 @@ package com.code.design.exception;
 import com.code.design.ErrorCode;
 
 public class BusinessException extends RuntimeException {
-    private ErrorCode errorCode;
+    private final ErrorCode errorCode;
 
-    public BusinessException(String message, ErrorCode error) {
+    public BusinessException(String message, ErrorCode errorCode) {
         super(message);
         this.errorCode = errorCode;
     }

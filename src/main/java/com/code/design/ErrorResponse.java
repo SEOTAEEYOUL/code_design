@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.cglib.core.Local;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
 import java.time.LocalDateTime;
@@ -48,6 +49,7 @@ public class ErrorResponse {
         this.status = code.getStatus();
         this.errors = errors;
         this.code = code.getCode();
+        this.timestamp = LocalDateTime.now( );
     }
 
     private ErrorResponse(final ErrorCode code) {
@@ -65,6 +67,11 @@ public class ErrorResponse {
     public static ErrorResponse of(ErrorCode code) {
         return new ErrorResponse(code.getMessage(), code.getStatus(), code.getCode());
     }
+
+    public static ErrorResponse of(Exception e) {
+        return new ErrorResponse(e.getMessage(), 500, "COO2");
+    }
+
 
 //    public static ErrorResponse of(final ErrorCode code) {
 //        return new ErrorResponse(code);
@@ -104,13 +111,21 @@ public class ErrorResponse {
         }
 
         private static List<FieldError> of(final BindingResult bindingResult) {
-            final List<org.springframework.validation.FieldError> fieldErrors = bindingResult.getFieldErrors();
-            return fieldErrors.stream()
+//            final List<org.springframework.validation.FieldError> fieldErrors = bindingResult.getFieldErrors();
+//            return fieldErrors.stream()
+//                    .map(error -> new FieldError(
+//                            error.getField(),
+//                            error.getRejectedValue() == null ? "" : error.getRejectedValue().toString(),
+//                            error.getDefaultMessage()))
+//                    .collect(Collectors.toList());
+
+            return bindingResult.getFieldErrors()
+                    .stream()
                     .map(error -> new FieldError(
                             error.getField(),
                             error.getRejectedValue() == null ? "" : error.getRejectedValue().toString(),
-                            error.getDefaultMessage()))
-                    .collect(Collectors.toList());
+                            error.getDefaultMessage()
+                    )).collect(Collectors.toList());
         }
     }
 }

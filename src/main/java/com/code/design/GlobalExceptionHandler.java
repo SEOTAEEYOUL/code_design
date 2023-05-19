@@ -25,8 +25,12 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(MethodArgumentNotValidException.class)
     protected ResponseEntity<ErrorResponse> handleMethodArgumentNotValidException(MethodArgumentNotValidException e) {
         log.error("handleMethodArgumentNotValidException", e);
-        final ErrorResponse response = ErrorResponse.of(ErrorCode.INVALID_INPUT_VALUE, e.getBindingResult());
-        return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+        // final ErrorResponse response = ErrorResponse.of(ErrorCode.INVALID_INPUT_VALUE, e.getBindingResult());
+        // return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+        final ErrorCode code = ErrorCode.INVALID_INPUT_VALUE;
+        final ErrorResponse response = ErrorResponse.of(code, e.getBindingResult());
+        return new ResponseEntity<>(response, HttpStatus.valueOf(code.getStatus()));
+
     }
 
     /**
@@ -73,15 +77,24 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(response, HttpStatus.valueOf(ErrorCode.HANDLE_ACCESS_DENIED.getStatus()));
     }
 
+    /**
+     * Business 요구 사항에 맞지 않는 경우 발생하는 예외를 핸들링
+     *
+     * 쿠폰 만료 예외 -> 400,
+     * 500 -> 계좌번호 검증 외부 API 500 -> 우리도 동일하게 500
+     *
+     * Exception 을 늘리기보다는 가능하면 최상위 클래스로 처리하는 것이 좋음
+     * @param e
+     * @return
+     */
     @ExceptionHandler(BusinessException.class)
-    protected ResponseEntity<ErrorResponse> handleBusinessException(final BusinessException e) {
-        log.error("handleEntityNotFoundException", e);
+    protected ResponseEntity<ErrorResponse> handleBusinessException(BusinessException e) {
+        log.error("BusinessException", e);
         final ErrorCode errorCode = e.getErrorCode();
+        // 4xx, 5xx
         final ErrorResponse response = ErrorResponse.of(errorCode);
         return new ResponseEntity<>(response, HttpStatus.valueOf(errorCode.getStatus()));
     }
-
-
 
 
     /**
@@ -94,12 +107,20 @@ public class GlobalExceptionHandler {
 
         return new ResponseEntity<>(response, HttpStatus.valueOf(ErrorCode.INTERNAL_SERVER_ERROR.getStatus()));
     }
+
+
+    /**
+     * 형변환이 가능한 상위 Exception 으로 받아서 처리하는 예제
+     * @param e RuntimeException
+     * @return ResponseEntity
+     */
     @ExceptionHandler({IllegalArgumentException.class,
             IllegalStateException.class
     })
     protected ResponseEntity<ErrorResponse> handleIllegalArgumentException(RuntimeException e) {
         log.error("handleIllegalArgumentException", e);
-        final ErrorResponse response = ErrorResponse.of(ErrorCode.INVALID_INPUT_VALUE);
+        // final ErrorResponse response = ErrorResponse.of(ErrorCode.INVALID_INPUT_VALUE);
+        final ErrorResponse response = ErrorResponse.of(e);
         return new ResponseEntity<>(response, HttpStatus.valueOf(ErrorCode.INVALID_INPUT_VALUE.getStatus()));
         // return new ResponseEntity<>(response, HttpStatus.INVALID_INPUT_VALUE);
     }
