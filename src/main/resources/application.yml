@@ -14,6 +14,20 @@ spring:
       enabled: true
   # timezone: UTC
   timezone: Asia/Seoul
+  messages:
+    basename: messages
+    encoding: UTF-8
+    # basename은 messages.properties 파일의 경로입니다.
+    # encoding은 메시지 파일의 인코딩입니다.
+    # default-locale은 메시지의 기본 언어입니다.
+    # Springboot 애플리케이션의 모든 출력 메시지가 한글로 출력
+    default-locale: ko_KR
+  # must not be empty의 한글 메시지입니다.
+  messages.must-not-be-empty: 필수 입력입니다.
+
+
+
+
 
 management:
   endpoints:

@@ -28,7 +28,8 @@ public class EmailDuplicationValidator implements ConstraintValidator<EmailUniqu
         if (isExistEmail) {
             cxt.disableDefaultConstraintViolation();
             cxt.buildConstraintViolationWithTemplate(
-                            MessageFormat.format("Email {0} already exists!", email))
+                            // MessageFormat.format("Email {0} already exists!", email))
+                            MessageFormat.format("Email {0} 이미 존재하는 이메일 입니다!", email))
                     .addConstraintViolation();
         }
         return !isExistEmail;

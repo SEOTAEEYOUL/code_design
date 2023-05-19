@@ -14,7 +14,8 @@ import jakarta.validation.Payload;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface EmailUnique {
 
-    String message() default "Email is Duplication";
+    // String message() default "Email is Duplication";
+    String message() default "이메일이 중복 되었습니다.";
 
     Class<?>[] groups() default {};
 

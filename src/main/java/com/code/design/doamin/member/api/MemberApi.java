@@ -39,7 +39,8 @@ public class MemberApi {
     @PostMapping
     public Member create(@RequestBody @Valid final SignUpRequest dto) {
         return memberRepository.save(Member.builder()
-                .email(dto.getEmail())
-                .build());
+                        .name(dto.getName())
+                        .email(dto.getEmail())
+                        .build());
     }
 }

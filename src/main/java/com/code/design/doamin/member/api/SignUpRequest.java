@@ -10,11 +10,16 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class SignUpRequest {
 
+
+
+    private String name;
+
     @EmailUnique
     @Email
     private String email;
 
-    public SignUpRequest(String email) {
+    public SignUpRequest(String name, String email) {
+        this.name = name;
         this.email = email;
     }
 }
