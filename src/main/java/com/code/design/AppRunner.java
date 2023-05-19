@@ -15,13 +15,13 @@ public class AppRunner implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
         memberRepository.save(
-                new Member("yun","yun@tes.com")
+                new Member("yun","yun@yun.com")
         );
         memberRepository.save(
-                new Member("test","test@tes.com")
+                new Member("test","test@test.com")
         );
         memberRepository.save(
-                new Member("seo","taeeyoul@gmail.com")
+                new Member("seo","seo@seo.com")
         );
     }
 }

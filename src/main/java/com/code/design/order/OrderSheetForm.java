@@ -14,7 +14,8 @@ import jakarta.validation.Payload;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface OrderSheetForm {
 
-    String message() default "Order sheet form is invalid";
+    // String message() default "Order sheet form is invalid";
+    String message() default "주문 정보가 올바르지 않습니다.";
 
     Class<?>[] groups() default {};
 
