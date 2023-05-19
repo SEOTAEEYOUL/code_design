@@ -165,7 +165,8 @@ public class DeviceController {
 - 카드결제, 무통장 결제 예시에서는 NonNull Annotation 을 같은 항목에 적용 불가능한 경우를 예시로 들어 작성  
 - 중복된 코드 제거
 - email custom annotation 을 사용한 validation
-  ![email-custom-validation.png](./img/email-custom-validation.png)  
-- card custom annotation 을 사용한 validation
-  ![card-custom-validation.png](./img/card-custom-validation.png)
+  ![email-custom-validation.png](./img/email-custom-validation.png)    
+- card/bank custom annotation 을 사용한 validation  
+  ![card-custom-validation.png](./img/card-custom-validation.png)  
+  ![bank-custom-validation.png](./img/bank-custom-validation.png)  
 

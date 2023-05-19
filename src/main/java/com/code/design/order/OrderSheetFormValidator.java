@@ -50,7 +50,8 @@ public class OrderSheetFormValidator implements ConstraintValidator<OrderSheetFo
             if (account == null) {
                 addConstraintViolation(context, "계좌정보는 필수입니다.", "payment", "account");
                 invalidCount += 1;
-            } else {
+            }
+            else {
                 if (ObjectUtils.isEmpty(account.getBankCode())) {
                     addConstraintViolation(context, "은행코드는 필수입니다.", "payment", "account", "bankCode");
                     invalidCount += 1;
