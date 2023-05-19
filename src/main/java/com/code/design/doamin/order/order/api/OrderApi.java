@@ -2,11 +2,15 @@ package com.code.design.doamin.order.order.api;
 
 import com.code.design.order.OrderSheetRequest;
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController("/api/orders")
+@RestController
+@RequestMapping("/api/orders")
+@RequiredArgsConstructor
 public class OrderApi {
 
     /**
@@ -21,8 +25,12 @@ public class OrderApi {
      * @param dto
      * @return
      */
+//    @PostMapping
+//    public OrderSheetRequest doOrder(@RequestBody @Valid final OrderSheetRequest dto) {
+//        return dto;
+//    }
     @PostMapping
-    public OrderSheetRequest doOrder(@RequestBody @Valid final OrderSheetRequest dto) {
+    public OrderSheetRequest order(@RequestBody @Valid final OrderSheetRequest dto) {
         return dto;
     }
 }

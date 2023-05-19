@@ -10,7 +10,7 @@ public class OrderSheetFormValidator implements ConstraintValidator<OrderSheetFo
 
     @Override
     public void initialize(OrderSheetForm constraintAnnotation) {
-
+        ConstraintValidator.super.initialize(constraintAnnotation);
     }
 
     @Override

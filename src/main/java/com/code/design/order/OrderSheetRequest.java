@@ -1,6 +1,5 @@
 package com.code.design.order;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.math.BigDecimal;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Min;
