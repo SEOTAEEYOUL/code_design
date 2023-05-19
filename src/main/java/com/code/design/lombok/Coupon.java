@@ -23,7 +23,7 @@ public class Coupon {
 
     @ManyToOne
     @JoinColumn(name = "member_id", updatable = false)
-    private Member member;
+    private Member1 member;
 
     @CreationTimestamp
     @Column(name = "create_at", nullable = false, updatable = false)

@@ -3,7 +3,6 @@ package com.code.design.lombok;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import lombok.ToString;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -16,7 +15,7 @@ import static lombok.ToString.*;
 @Entity
 @Table(name = "member")
 @Data
-public class Member {
+public class Member1 {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

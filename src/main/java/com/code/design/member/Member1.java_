@@ -1,0 +1,31 @@
+package com.code.design.member;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.validation.constraints.Email;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.ToString;
+
+@Entity
+@Table(name = "member")
+@Getter
+@ToString
+public class Member1 {
+
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+
+    @Email
+    @Column(name = "email", nullable = false, updatable = false, unique = true)
+    private String email;
+
+    @Builder
+    public Member1(String email) {
+        this.email = email;
+    }
+}

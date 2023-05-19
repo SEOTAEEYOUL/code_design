@@ -1,0 +1,17 @@
+GET localhost:8181/actuator
+
+###
+
+GET localhost:8181/members
+
+###
+
+POST localhost:8181/members/unchekced
+
+###
+
+POST localhost:8181/members/chekced
+
+###
+
+GET localhost:8181/sample?value=value

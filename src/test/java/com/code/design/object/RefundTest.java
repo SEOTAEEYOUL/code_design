@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 class RefundTest {
 
-    private Order order;
+    private Order1 order;
     private Account account;
     private CreditCard creditCard;
 
@@ -31,7 +31,7 @@ class RefundTest {
                 .creditHolder("홍길동")
                 .build();
 
-        order = Order.builder()
+        order = Order1.builder()
                 .address(address)
                 .build();
     }

@@ -1,11 +1,5 @@
 package com.code.design.lombok;
 
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-
-import com.code.design.lombok.Coupon;
-import com.code.design.lombok.Member;
 import org.junit.jupiter.api.Test;
 
 class MemberTest {
@@ -13,7 +7,7 @@ class MemberTest {
     @Test
     public void setter_남용의_문제() {
         // 우리는 회원에 대한 이메일 변경 기능을 제공하지 않는다.
-        final Member member = new Member();
+        final Member1 member = new Member1();
 
         // bean 방식
         member.setEmail("asd@asd.com");

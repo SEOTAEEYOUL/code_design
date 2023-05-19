@@ -16,7 +16,7 @@ import org.springframework.util.Assert;
 @Table(name = "orders")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
-public class Order {
+public class Order1 {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,7 +26,7 @@ public class Order {
     private Address address;
 
     @Builder
-    public Order(Address address) {
+    public Order1(Address address) {
         Assert.notNull(address, "address must not be null");
 
         this.address = address;

@@ -134,3 +134,14 @@ public class DeviceController {
 | 트랜잭션 Rollback 여부 | Rollback 안됨 | Rollback 진행 |  
 | 대표 Exception     | IOException, </br> SQLException | NullPointerException, </br> IllegalArgmentException |  
 
+---
+
+## 통일된 Error Response 를 가져야하는 이유
+- 모양이 틀리면 Client 에서 처리해야 하는 
+- 200
+- 4XX
+  - 400
+  - 401
+  - 404
+- 5XX
+

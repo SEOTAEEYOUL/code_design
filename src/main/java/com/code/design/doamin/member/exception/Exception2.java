@@ -9,8 +9,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class Exception2 {
 
-    public void signUp(final String name) {
-        final Member member = new Member(name);
+    public void signUp(final String name, String email) {
+        final Member member = new Member(name, email);
 //        printJson1(member); // printJson1 사용시 예외처리에 대한 위임을 받아 처리 해야한다.
 //        printJson2(member); // printJson2 사용시 예외처리를 위임 받지 않아도 된다.
 

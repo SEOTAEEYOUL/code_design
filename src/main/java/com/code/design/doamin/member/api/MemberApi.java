@@ -3,11 +3,9 @@ package com.code.design.doamin.member.api;
 import com.code.design.doamin.member.dao.MemberRepository;
 import com.code.design.doamin.member.dao.MemberService;
 import com.code.design.doamin.member.domain.Member;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.util.List;
@@ -36,5 +34,12 @@ public class MemberApi {
     public Member chekced() throws IOException {
         final Member member = memberService.createCheckedException();
         return member;
+    }
+
+    @PostMapping
+    public Member create(@RequestBody @Valid final SignUpRequest dto) {
+        return memberRepository.save(Member.builder()
+                .email(dto.getEmail())
+                .build());
     }
 }
