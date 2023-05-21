@@ -1,13 +1,12 @@
 package com.code.design.doamin.member.api;
 
 import com.code.design.doamin.member.dao.MemberRepository;
-import com.code.design.doamin.member.dao.MemberService;
+import com.code.design.doamin.member.application.MemberService;
 import com.code.design.doamin.member.domain.Member;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
 import java.util.List;
 
 @RestController

@@ -9,6 +9,10 @@ import java.util.stream.Collectors;
 import org.springframework.util.ObjectUtils;
 
 
+/**
+ * 1. 주문시 주문완료 메시지에 대한 책임을 갖는다.
+ * 2. SMS, EMAIL, KAKAO
+ */
 public class OrderMessage {
 
     final private String type;
