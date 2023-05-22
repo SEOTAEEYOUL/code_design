@@ -67,7 +67,6 @@ public class Member {
 
     public void changePassword(String password){
         this.password = password;
-
     }
 
 }

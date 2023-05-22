@@ -42,4 +42,15 @@ public class MemberApi {
                         .email(dto.getEmail())
                         .build());
     }
+
+    @GetMapping
+    public List<Member> getMembers(){
+        return memberRepository.findAll();
+    }
+
+    @PostMapping
+    public void signUp(@RequestBody MemberSignUpRequest dto) {
+        memberSignUpService.signUp(dto);
+    }
+
 }

@@ -1,21 +1,14 @@
-package com.code.design.doamin.member.application;
+package com.code.design.member;
 
-
+import com.code.design.coupon.CouponIssueService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-/**
- * 서비스 클래스를 만들 때 행위 중심으로 만들어야 한다.
- * 1. 회원가입에 대한 책임을 갖는다.
- *
- * MemberService -> Member All ...
- */
 @Service
 @RequiredArgsConstructor
-public class MemberSignupService {
-
-    // 비밀번호 변경하는 로직을 생성 X
-    // 이메일 업데이트 가능 X
+public class MemberSignUpService {
 
     private final MemberRepository memberRepository;
     private final CouponIssueService couponIssueService;

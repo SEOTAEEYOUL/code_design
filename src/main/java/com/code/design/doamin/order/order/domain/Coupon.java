@@ -1,31 +1,52 @@
 package com.code.design.doamin.order.order.domain;
 
-
-import java.time.LocalDate;
+import jakarta.math.BigDecimal;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.time.LocalDate;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
+@Entity
+@Table(name = "coupon")
 @Getter
 // @Setter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+// @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Coupon {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     private boolean used;
 
+    @Column(name = "amount", nullable = false)
     private double amount;
+
+    @Column(name = "member_id", nullable = false, updatable = false)
+    private Long memberId;
 
     private LocalDate expirationDate;
 
-    public Coupon(double amount, LocalDate expirationDate) {
+
+    public Coupon(BigDecimal amount, Long memberId) {
+        this.amount = amount;
+        this.memberId = memberId;
+    }
+
+    public Coupon(BigDecimal amount, Long memberId,  LocalDate expirationDate) {
         this.amount         = amount;
+        this.memberId       = memberId;
         this.expirationDate = expirationDate;
         this.used           = false;
     }
-
 
     // 적용
     // 1. 만료 여부

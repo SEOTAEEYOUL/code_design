@@ -20,6 +20,9 @@ import java.util.Set;
 @RequiredArgsConstructor
 public class OrderApi {
 
+    private final OrderService orderService;
+    private final OrderRepository orderRepository;
+
     /**
      * 주문
      * 1. 주문에 대한 결제는 무통장 입금, 카드 결제가 가능합니다.
@@ -55,4 +58,15 @@ public class OrderApi {
         @NotNull
         private Set<MessageType> messageType;
     }
+
+    @PostMapping
+    public void doOrder(@RequestBody OrderRequest dto) {
+        orderService.doOrder(dto);
+    }
+
+    @GetMapping
+    public List<Order> getOrders(){
+        return orderRepository.findAll();
+    }
+
 }

@@ -179,3 +179,24 @@ public class DeviceController {
 3. 묻지 말고 시켜라!
     - 객체는 협력적이다.
     - 복종하는 관계가 아님
+
+---
+
+## 시스템 내 강결합 문제 해결
+### ApplicationEventPublisher 를 이용한 시스템 내의 강결합 문제 해결
+- Kafka
+- RabbitMQ
+- Spring 제공
+  - ApplicationEventPublisher
+  - ApplicationEventListener
+- 회원가입
+  - 회원 가입
+  - 회원가입 쿠폰발행
+  - ApplicationEventPushisher
+- 회원 가입 완료 이후
+  - ApplicationEventListner
+  - 회원 가입 이메일 전송
+
+### @TransactionalEventListener 를 이용한 트랜잭션 문제 해결
+- 해당 트랜잭션이 Commit 된 이후에 리스너가 동작
+- 예외가 발생하게 된다면 트랜잭션 Commit 이 진행되지 않기 때문에 해당 리스너가 동자가지 않게 되어 트랜잭션 문제를 해결할 수 있음

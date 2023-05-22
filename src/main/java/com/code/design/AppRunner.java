@@ -23,5 +23,13 @@ public class AppRunner implements ApplicationRunner {
         memberRepository.save(
                 new Member("seo","seo@seo.com")
         );
+
+
+        cartRepository.save(new Cart(1L));
+        cartRepository.save(new Cart(2L));
+        cartRepository.save(new Cart(3L));
+        cartRepository.save(new Cart(4L));
+        cartRepository.save(new Cart(5L));
+        cartRepository.save(new Cart(6L));
     }
 }
