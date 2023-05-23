@@ -1,6 +1,9 @@
 package com.code.design.doamin.order.order.api;
 
+import com.code.design.doamin.order.order.dao.OrderRepository;
 import com.code.design.doamin.order.order.domain.Order;
+import com.code.design.order.OrderRequest;
+import com.code.design.order.OrderService;
 import com.code.design.order.OrderSheetRequest;
 import com.code.design.doamin.order.order.domain.MessageType;
 import com.code.design.doamin.order.order.domain.OrderMessage;
@@ -8,11 +11,9 @@ import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Set;
 
 @RestController
@@ -52,12 +53,12 @@ public class OrderApi {
         return order;
     }
 
-    @Getter
-    public static class OrderRequest {
-
-        @NotNull
-        private Set<MessageType> messageType;
-    }
+//    @Getter
+//    public static class OrderRequest {
+//
+//        @NotNull
+//        private Set<MessageType> messageType;
+//    }
 
     @PostMapping
     public void doOrder(@RequestBody OrderRequest dto) {

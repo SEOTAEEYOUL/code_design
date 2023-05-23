@@ -2,6 +2,8 @@ package com.code.design.doamin.member.api;
 
 import com.code.design.doamin.member.dao.MemberRepository;
 import com.code.design.doamin.member.application.MemberService;
+import com.code.design.doamin.member.application.MemberSignUpService;
+import com.code.design.doamin.member.dao.MemberSignUpRequest;
 import com.code.design.doamin.member.domain.Member;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -14,6 +16,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class MemberApi {
     private final MemberService memberService;
+    private final MemberSignUpService memberSignUpService;
     private final MemberRepository memberRepository;
 
     @GetMapping

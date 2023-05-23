@@ -2,15 +2,19 @@ package com.code.design;
 
 import com.code.design.doamin.member.dao.MemberRepository;
 import com.code.design.doamin.member.domain.Member;
+import com.code.design.doamin.order.order.dao.CartRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
+import com.code.design.doamin.order.order.domain.Cart;
+
 
 @Component
 @RequiredArgsConstructor
 public class AppRunner implements ApplicationRunner {
     private final MemberRepository memberRepository;
+    private final CartRepository cartRepository;
 
     @Override
     public void run(ApplicationArguments args) throws Exception {

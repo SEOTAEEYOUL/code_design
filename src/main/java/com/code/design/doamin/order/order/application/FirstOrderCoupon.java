@@ -2,6 +2,7 @@ package com.code.design.doamin.order.order.application;
 
 import com.code.design.doamin.order.order.domain.Coupon;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public class FirstOrderCoupon {
@@ -20,7 +21,7 @@ public class FirstOrderCoupon {
 
     // 실제는 데이터베이스 조회..
     private Coupon getCoupon(final Long id) {
-        return new Coupon(1000, LocalDate.now().plusDays(3));
+        return new Coupon(new BigDecimal(1000), LocalDate.now().plusDays(3).toEpochDay( ));
     }
 
     private boolean canIssued() {

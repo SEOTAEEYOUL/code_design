@@ -1,5 +1,6 @@
 package com.code.design.member;
 
+import com.code.design.doamin.member.domain.Member;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 

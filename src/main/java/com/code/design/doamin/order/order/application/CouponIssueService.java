@@ -1,6 +1,8 @@
 package com.code.design.coupon;
 
 import java.math.BigDecimal;
+
+import com.code.design.doamin.order.order.domain.Coupon;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

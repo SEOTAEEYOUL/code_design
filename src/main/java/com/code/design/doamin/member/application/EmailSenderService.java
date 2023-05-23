@@ -1,7 +1,8 @@
 package com.code.design;
 
-import com.code.design.domain.member.domain.Member;
-import com.code.design.domain.order.order.domain.Order;
+
+import com.code.design.doamin.member.domain.Member;
+import com.code.design.doamin.order.order.domain.Order;
 import org.springframework.stereotype.Service;
 
 @Service
