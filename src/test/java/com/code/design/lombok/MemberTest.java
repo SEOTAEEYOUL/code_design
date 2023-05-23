@@ -1,5 +1,6 @@
 package com.code.design.lombok;
 
+import com.code.design.doamin.member.domain.Member;
 import org.junit.jupiter.api.Test;
 
 class MemberTest {
@@ -7,11 +8,11 @@ class MemberTest {
     @Test
     public void setter_남용의_문제() {
         // 우리는 회원에 대한 이메일 변경 기능을 제공하지 않는다.
-        final Member1 member = new Member1();
+        final Member member = new Member("name", "asd@asd.com");
 
-        // bean 방식
-        member.setEmail("asd@asd.com");
-        member.setName("name");
+//        // bean 방식
+//        member.setEmail("asd@asd.com");
+//        member.setName("name");
         // 객체 생성 완료
         // 앞으로 추가적인 이메일 변경은 불가능 해야한다.
 

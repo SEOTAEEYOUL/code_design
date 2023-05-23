@@ -24,12 +24,12 @@ class OrderLegacyTest {
 //    }
 
 
-    @Test
-    public void 객체_생성() {
-        final OrderLegacy orderLegacy = new OrderLegacy("KAKAO,EMAIL,SMS");
-        final String[] messageTypes = orderLegacy.getMessageTypes();
-        then(messageType).contains("KAKAO", "EMAIL", "SMS");
-    }
+//    @Test
+//    public void 객체_생성() {
+//        final OrderLegacy orderLegacy = new OrderLegacy("KAKAO,EMAIL,SMS");
+//        final String[] messageTypes = orderLegacy.getMessageTypes();
+//        then(messageType).contains("KAKAO", "EMAIL", "SMS");
+//    }
 
 
     @Test

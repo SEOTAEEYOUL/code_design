@@ -1,6 +1,6 @@
 package com.code.design.doamin.member.domain;
 
-import com.code.design.lombok.Coupon;
+import com.code.design.doamin.order.order.domain.Coupon;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
@@ -17,6 +17,7 @@ import java.util.List;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
 @ToString
+@Data
 public class Member {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,11 +37,11 @@ public class Member {
 
 
 
-//    @OneToMany
-//    @JoinColumn(name = "coupon_id")
-//    // 순환 참조가 되고 있는 부분을 제외 시킨
-//    @ToString.Exclude
-//    private List<Coupon> coupons = new ArrayList<>();
+    @OneToMany
+    @JoinColumn(name = "coupon_id")
+    // 순환 참조가 되고 있는 부분을 제외 시킨
+    @ToString.Exclude
+    private List<Coupon> coupons = new ArrayList<>();
 
     @CreationTimestamp
     @Column(name = "create_at", nullable = false, updatable = false)

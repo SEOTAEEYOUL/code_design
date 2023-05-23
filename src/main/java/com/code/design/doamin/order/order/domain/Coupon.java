@@ -1,18 +1,20 @@
 package com.code.design.doamin.order.order.domain;
 
 import java.math.BigDecimal;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+
+import com.code.design.doamin.member.domain.Member;
+import jakarta.persistence.*;
+
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
 @Table(name = "coupon")
@@ -23,9 +25,15 @@ public class Coupon {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", updatable = false)
     private long id;
 
+    @Column(name = "used", nullable = false)
     private boolean used;
+
+    @ManyToOne
+    @JoinColumn(name = "member_id", updatable = false)
+    private Member member;
 
     @Column(name = "amount", nullable = false)
     private BigDecimal amount;
@@ -34,6 +42,14 @@ public class Coupon {
     private Long memberId;
 
     private LocalDate expirationDate;
+
+    @CreationTimestamp
+    @Column(name = "create_at", nullable = false, updatable = false)
+    private LocalDateTime createAt;
+
+    @UpdateTimestamp
+    @Column(name = "update_at", nullable = false, updatable = false)
+    private LocalDateTime updateAt;
 
 
     public Coupon(BigDecimal amount, Long memberId) {
