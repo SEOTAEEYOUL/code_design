@@ -223,3 +223,10 @@ public class DeviceController {
 - 예외가 발생하게 된다면 트랜잭션 Commit 이 진행되지 않기 때문에 해당 리스너가 동자가지 않게 되어 트랜잭션 문제를 해결할 수 있음
 
 ### @Async Annotation 사용으로 @Transactional 로 묶인 Transaction 의 성능, 
+
+
+## gradle
+```
+gradle clean build --warning-mode all     
+gradle bootRun  
+```

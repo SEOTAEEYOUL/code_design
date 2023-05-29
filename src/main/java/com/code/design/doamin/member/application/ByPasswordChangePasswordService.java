@@ -6,7 +6,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
-// @AllArgsConstructor
+@AllArgsConstructor
 public class ByPasswordChangePasswordService implements ChangePasswordService {
 
     private MemberFindService memberFindService;
