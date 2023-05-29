@@ -52,6 +52,8 @@ public class Coupon {
     private LocalDateTime updateAt;
 
 
+
+
     public Coupon(BigDecimal amount, Long memberId) {
         this.amount = amount;
         this.memberId = memberId;
@@ -63,6 +65,15 @@ public class Coupon {
         this.expirationDate = expirationDate;
         this.used           = false;
     }
+
+    public Coupon(double amount, LocalDate expirationDate) {
+        this.amount         = new BigDecimal(amount);
+        // this.memberId       = memberId;
+        this.expirationDate = expirationDate;
+        this.used           = false;
+    }
+
+
 
     // 적용
     // 1. 만료 여부
@@ -87,7 +98,8 @@ public class Coupon {
         verifyUsed();
     }
 
-    private boolean isExpiration() {
+    // private boolean isExpiration() {
+    public boolean isExpiration() {
         return LocalDate.now().isAfter(expirationDate);
     }
 

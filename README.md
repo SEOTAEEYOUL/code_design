@@ -161,6 +161,11 @@ public class DeviceController {
         - CouponNotFoundException
         - EmailNotFoundException
 
+![CouponTest.png](./img/CouponTest.png)  
+![CouponTest-쿠폰할인적용.png](./img/CouponTest-쿠폰할인적용.png)  
+![CouponTest-쿠폰할인적용시_이미사용했을경우](./img/CouponTest-%EC%BF%A0%ED%8F%B0%ED%95%A0%EC%9D%B8%EC%A0%81%EC%9A%A9%EC%8B%9C_%EC%9D%B4%EB%AF%B8%EC%82%AC%EC%9A%A9%ED%96%88%EC%9D%84%EA%B2%BD%EC%9A%B0.png)
+
+
 ## Custom Validation 어노테이션 만들기
 - 카드결제, 무통장 결제 예시에서는 NonNull Annotation 을 같은 항목에 적용 불가능한 경우를 예시로 들어 작성  
 - 중복된 코드 제거

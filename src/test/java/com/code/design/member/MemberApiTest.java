@@ -5,6 +5,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import com.code.design.doamin.member.api.SignUpRequest;
+import com.code.design.doamin.member.dao.MemberRepository;
+import com.code.design.doamin.member.domain.Member;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -59,9 +61,10 @@ public class MemberApiTest {
     @Test
     public void signUp_test_이메일이_중복된_경우() throws Exception {
         //given
-        final String email = "yun@test.com";
-        memberRepository.save(new Member1(email));
-        final SignUpRequest dto = new SignUpRequest(email);
+        final String name = "You";
+        final String email = "Yun@test.com";
+        memberRepository.save(new Member(name, email));
+        final SignUpRequest dto = new SignUpRequest(name, email);
 
         //when
         final ResultActions resultActions = requestSignUp(dto);
