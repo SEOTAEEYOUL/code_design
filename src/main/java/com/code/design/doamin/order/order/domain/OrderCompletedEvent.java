@@ -1,4 +1,4 @@
-package com.code.design.validation.domain;
+package com.code.design.doamin.order.order.domain;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

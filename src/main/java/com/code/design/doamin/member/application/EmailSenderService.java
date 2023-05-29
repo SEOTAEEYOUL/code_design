@@ -2,7 +2,7 @@ package com.code.design;
 
 
 import com.code.design.doamin.member.domain.Member;
-import com.code.design.validation.domain.Order;
+import com.code.design.doamin.order.order.domain.Order;
 import org.springframework.stereotype.Service;
 
 @Service

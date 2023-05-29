@@ -1,4 +1,4 @@
-package com.code.design.validation.domain;
+package com.code.design.doamin.order.order.domain;
 
 public class OrderLegacy {
 

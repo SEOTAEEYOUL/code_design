@@ -1,7 +1,7 @@
 package com.code.design.doamin.order.cart.application;
 
 import com.code.design.doamin.order.cart.dao.CartRepository;
-import com.code.design.validation.domain.Order;
+import com.code.design.doamin.order.order.domain.Order;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

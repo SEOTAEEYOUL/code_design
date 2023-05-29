@@ -1,7 +1,7 @@
 package com.code.design.member;
 
 import com.code.design.doamin.member.domain.Member;
-import com.code.design.lombok.Student;
+import com.code.design.doamin.member.domain.Student;
 import org.junit.jupiter.api.Test;
 
 class MemberTest {

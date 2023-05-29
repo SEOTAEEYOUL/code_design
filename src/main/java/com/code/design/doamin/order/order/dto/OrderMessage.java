@@ -6,9 +6,9 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import com.code.design.validation.domain.MessageType;
-import org.jetbrains.annotations.Contract;
-import org.jetbrains.annotations.NotNull;
+// import org.hibernate.annotations.Type;
+// import org.jetbrains.annotations.Contract;
+// import org.jetbrains.annotations.NotNull;
 import org.springframework.util.ObjectUtils;
 
 
@@ -16,6 +16,8 @@ import org.springframework.util.ObjectUtils;
  * 1. 주문시 주문완료 메시지에 대한 책임을 갖는다.
  * 2. SMS, EMAIL, KAKAO
  */
+
+// @Type(type = "com.code.design.doamin.order.order.dto.OrderMessageType")
 public class OrderMessage {
 
     final private String type;
@@ -24,8 +26,8 @@ public class OrderMessage {
         this.type = ObjectUtils.isEmpty(type) ? null : type;
     }
 
-    @Contract("_ -> new")
-    public static @NotNull OrderMessage of(Set<MessageType> types) {
+    // @Contract("_ -> new")
+    public static OrderMessage of(Set<MessageType> types) {
         return new OrderMessage(joining(types));
     }
 
@@ -37,7 +39,7 @@ public class OrderMessage {
         return new ArrayList<>(doSplit());
     }
 
-    private static String joining(@NotNull Set<MessageType> types) {
+    private static String joining(Set<MessageType> types) {
         return types.stream()
             .map(Enum::name)
             .collect(Collectors.joining(","));

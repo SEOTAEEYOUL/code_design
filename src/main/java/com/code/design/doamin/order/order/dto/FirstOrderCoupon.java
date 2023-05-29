@@ -1,4 +1,4 @@
-package com.code.design.doamin.order.order.application;
+package com.code.design.doamin.order.order.dto;
 
 import com.code.design.doamin.coupon.domain.Coupon;
 

@@ -3,9 +3,9 @@ package com.code.design.order;
 import java.math.BigDecimal;
 import java.util.Set;
 
-import com.code.design.validation.domain.MessageType;
-import com.code.design.validation.domain.Order;
-import com.code.design.validation.domain.Orderer;
+import com.code.design.doamin.order.order.dto.MessageType;
+import com.code.design.doamin.order.order.domain.Order;
+import com.code.design.doamin.order.order.domain.Orderer;
 import lombok.Getter;
 
 @Getter

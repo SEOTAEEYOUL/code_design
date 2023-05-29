@@ -1,4 +1,4 @@
-package com.code.design.lombok;
+package com.code.design.doamin.member.domain;
 
 
 import jakarta.persistence.*;

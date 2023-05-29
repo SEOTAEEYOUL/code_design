@@ -1,6 +1,6 @@
 package com.code.design.doamin.account.domain;
 
-import com.code.design.account.Order1;
+import com.code.design.doamin.order.order.domain.Order;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -32,7 +32,7 @@ public class Refund {
 
     @OneToOne
     @JoinColumn(name = "order_id", nullable = false)
-    private Order1 order;
+    private Order order;
 
 
     // 1. account -> null, creditCard -> notnull
@@ -43,7 +43,7 @@ public class Refund {
 
     // builderClassName = "환불사유를적음"
     @Builder(builderClassName = "ByAccountBuilder", builderMethodName = "ByAccountBuilder") // 계좌 번호 기반 환불, Builder 이름을 부여해서 그에 따른 책임 부여, 그에 따른 필수 인자값 명확
-    public Refund(Account account, Order1 order) {
+    public Refund(Account account, Order order) {
         Assert.notNull(account, "account must not be null");
         Assert.notNull(order, "order must not be null");
 
@@ -52,7 +52,7 @@ public class Refund {
     }
 
     @Builder(builderClassName = "ByCreditCardBuilder", builderMethodName = "ByCreditCardBuilder")  // 신용 카드 기반 환불, Builder 이름을 부여해서 그에 따른 책임 부여, 그에 따른 필수 인자값 명확
-    public Refund(CreditCard creditCard, Order1 order) {
+    public Refund(CreditCard creditCard, Order order) {
         Assert.notNull(creditCard, "creditCard must not be null");
         Assert.notNull(order, "order must not be null");
 
