@@ -19,8 +19,8 @@ import org.hibernate.annotations.UpdateTimestamp;
 @Entity
 @Table(name = "coupon")
 @Getter
-// @Setter
-// @NoArgsConstructor(access = AccessLevel.PROTECTED)
+// Setter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Coupon {
 
     @Id
@@ -32,13 +32,14 @@ public class Coupon {
     private boolean used;
 
     @ManyToOne
-    @JoinColumn(name = "member_id", updatable = false)
+    @JoinColumn(name = "member", updatable = false)
     private Member member;
 
     @Column(name = "amount", nullable = false)
     private BigDecimal amount;
 
     @Column(name = "member_id", nullable = false, updatable = false)
+    // @Column(insertable=false, updatable=false)
     private Long memberId;
 
     private LocalDate expirationDate;

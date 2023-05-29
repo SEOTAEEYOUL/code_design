@@ -1,4 +1,4 @@
-package com.code.design.order;
+package com.code.design.doamin.order.order.domain;
 
 import com.code.design.doamin.order.cart.application.CartService;
 import com.code.design.doamin.order.order.domain.OrderCompletedEvent;

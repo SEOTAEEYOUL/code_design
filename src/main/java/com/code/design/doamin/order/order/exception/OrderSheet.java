@@ -1,6 +1,7 @@
-package com.code.design.validation;
+package com.code.design.doamin.order.order.exception;
 
 
+import com.code.design.global.error.exception.EmailDuplicationValidator;
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;
 

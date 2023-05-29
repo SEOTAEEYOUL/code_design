@@ -1,18 +1,19 @@
-package com.code.design.account;
+package com.code.design.order;
 
 import static org.assertj.core.api.BDDAssertions.then;
 import static org.assertj.core.api.BDDAssertions.thenThrownBy;
 
 import com.code.design.doamin.account.domain.Account;
-import com.code.design.doamin.account.domain.Address;
 import com.code.design.doamin.account.domain.CreditCard;
-import com.code.design.doamin.account.domain.Refund;
+import com.code.design.doamin.model.Address;
+import com.code.design.doamin.order.order.domain.Order;
+import com.code.design.doamin.order.order.domain.Refund;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class RefundTest {
 
-    private Order1 order;
+    private Order order;
     private Account account;
     private CreditCard creditCard;
 
@@ -35,7 +36,7 @@ class RefundTest {
                 .creditHolder("홍길동")
                 .build();
 
-        order = Order1.builder()
+        order = Order.builder()
                 .address(address)
                 .build();
     }

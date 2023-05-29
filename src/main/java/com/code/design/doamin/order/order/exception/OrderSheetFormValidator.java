@@ -1,7 +1,9 @@
-package com.code.design.order;
+package com.code.design.doamin.order.order.exception;
 
-import com.code.design.order.OrderSheetRequest.Account;
-import com.code.design.order.OrderSheetRequest.Card;
+import com.code.design.doamin.order.order.dto.OrderSheetRequest;
+import com.code.design.doamin.order.order.dto.OrderSheetRequest.Account;
+import com.code.design.doamin.order.order.dto.OrderSheetRequest.Card;
+import com.code.design.doamin.order.order.dto.PaymentMethod;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 import org.springframework.util.ObjectUtils;

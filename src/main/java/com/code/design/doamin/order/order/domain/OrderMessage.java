@@ -1,4 +1,4 @@
-package com.code.design.doamin.order.order.dto;
+package com.code.design.doamin.order.order.domain;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -9,6 +9,10 @@ import java.util.stream.Collectors;
 // import org.hibernate.annotations.Type;
 // import org.jetbrains.annotations.Contract;
 // import org.jetbrains.annotations.NotNull;
+import jakarta.persistence.*;
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 import org.springframework.util.ObjectUtils;
 
 
@@ -17,13 +21,16 @@ import org.springframework.util.ObjectUtils;
  * 2. SMS, EMAIL, KAKAO
  */
 
-// @Type(type = "com.code.design.doamin.order.order.dto.OrderMessageType")
+@Embeddable
+@Getter
 public class OrderMessage {
 
-    final private String type;
 
-    private OrderMessage(String type) {
-        this.type = ObjectUtils.isEmpty(type) ? null : type;
+    @Column(name = "type", nullable = false)
+    final private String type_;
+
+    private OrderMessage(String type_) {
+        this.type_ = ObjectUtils.isEmpty(type_) ? null : type_;
     }
 
     // @Contract("_ -> new")
@@ -32,7 +39,7 @@ public class OrderMessage {
     }
 
     public List<MessageType> getTypes() {
-        if (ObjectUtils.isEmpty(type)) {
+        if (ObjectUtils.isEmpty(type_)) {
             return new ArrayList<>();
         }
 
@@ -46,7 +53,7 @@ public class OrderMessage {
     }
 
     private Set<MessageType> doSplit() {
-        final String[] split = this.type.split(",");
+        final String[] split = this.type_.split(",");
         return Arrays.stream(split)
             .map(MessageType::valueOf)
             .collect(Collectors.toSet());

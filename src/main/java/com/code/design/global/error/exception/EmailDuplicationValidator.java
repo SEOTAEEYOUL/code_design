@@ -1,4 +1,4 @@
-package com.code.design.validation;
+package com.code.design.global.error.exception;
 
 // import com.code.design.domain.member.dao.MemberRepository;
 import java.text.MessageFormat;

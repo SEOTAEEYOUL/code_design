@@ -3,7 +3,7 @@ package com.code.design.account;
 import static org.assertj.core.api.BDDAssertions.then;
 import static org.assertj.core.api.BDDAssertions.thenThrownBy;
 
-import com.code.design.doamin.account.domain.Address;
+import com.code.design.doamin.model.Address;
 import org.junit.jupiter.api.Test;
 
 class AddressTest {

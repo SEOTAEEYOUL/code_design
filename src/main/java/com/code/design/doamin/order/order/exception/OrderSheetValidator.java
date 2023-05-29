@@ -1,6 +1,7 @@
-package com.code.design.validation;
+package com.code.design.doamin.order.order.exception;
 
-import com.code.design.order.OrderSheetRequest;
+import com.code.design.doamin.order.order.dto.OrderSheetRequest;
+import com.code.design.doamin.order.order.exception.OrderSheet;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 

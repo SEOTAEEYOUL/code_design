@@ -1,6 +1,6 @@
 package com.code.design.doamin.member.api;
 
-import com.code.design.validation.EmailUnique;
+import com.code.design.global.error.exception.EmailUnique;
 import jakarta.validation.constraints.Email;
 import lombok.AccessLevel;
 import lombok.Getter;

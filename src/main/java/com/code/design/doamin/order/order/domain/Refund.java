@@ -1,5 +1,7 @@
-package com.code.design.doamin.account.domain;
+package com.code.design.doamin.order.order.domain;
 
+import com.code.design.doamin.account.domain.Account;
+import com.code.design.doamin.account.domain.CreditCard;
 import com.code.design.doamin.order.order.domain.Order;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
