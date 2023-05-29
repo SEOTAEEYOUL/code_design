@@ -1,4 +1,4 @@
-package com.code.design.infra;
+package com.code.design.infra.sms.dto;
 
 
 import lombok.Getter;

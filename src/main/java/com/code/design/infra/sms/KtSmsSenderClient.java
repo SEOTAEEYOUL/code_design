@@ -1,11 +1,9 @@
-package com.code.design.infra;
+package com.code.design.infra.sms;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
-
-import static com.code.design.infra.AmazonSmsClient.*;
 
 public class KtSmsSenderClient {
     public SendResponse send(final SendRequest dto) {

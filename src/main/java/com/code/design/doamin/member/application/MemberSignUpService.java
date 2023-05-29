@@ -1,6 +1,7 @@
 package com.code.design.doamin.member.application;
 
 
+import com.code.design.doamin.coupon.application.CouponIssueService;
 import com.code.design.doamin.member.dao.MemberRepository;
 import com.code.design.doamin.member.dao.MemberSignUpRequest;
 import com.code.design.doamin.member.domain.Member;
@@ -24,7 +25,7 @@ public class MemberSignUpService {
     // 이메일 업데이트 가능 X
 
     private final MemberRepository memberRepository;
-    private final com.code.design.coupon.CouponIssueService couponIssueService;
+    private final CouponIssueService couponIssueService;
     //    private final EmailSenderService emailSenderService;
     private final ApplicationEventPublisher eventPublisher;
 

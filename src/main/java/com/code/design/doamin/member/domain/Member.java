@@ -1,6 +1,6 @@
 package com.code.design.doamin.member.domain;
 
-import com.code.design.doamin.order.order.domain.Coupon;
+import com.code.design.doamin.coupon.domain.Coupon;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;

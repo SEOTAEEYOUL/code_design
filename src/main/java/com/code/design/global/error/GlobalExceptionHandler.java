@@ -1,9 +1,8 @@
 package com.code.design.global.error;
 
 
-import com.code.design.ErrorCode;
-import com.code.design.global.common.ErrorResponse;
-import com.code.design.exception.BusinessException;
+import com.code.design.global.error.exception.ErrorCode;
+import com.code.design.global.error.exception.BusinessException;
 import java.nio.file.AccessDeniedException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;

@@ -11,18 +11,29 @@
 - global : 프로젝트의 전체 담당
 - infra : 외부 인프라스트럭처 담당
 
-### domain
+### Domain 하부 구조
+#### domain
+- common
+  - 공통으로 사용되는 Value 객체들로 구성
+  - 페이징 처리를 위한 Request, 공통된 응답을 주는 Response 객체들이 있음
+- config
+  - 스프링 각종 설정들로 구성
 - api
     - 컨트롤러 클래스들이 존재 합니다.
+- application
+  - Service 클래스  
+  - 도메인 객체와 외부 영역을 연결해주는 파사드와 같은 역할을 주로 담당하는 클래스로 구성  
 - domain
     - 도메인 엔티티에 대한 클래스로 구성,
     - 특정 도메인에만 속하는 Embeddable, Enum 같은 클래스도 구성
 - dto
     - 주로 Request, Response 객체들로 구성
+    - repository 와 비슷
+    - repository로 하지 않은 이유는 조회 전용 구현체들이 많이 작성
 - exception
     - 해당 도메인이 발생시키는 Exception 으로 구성
-- global
-    - 프로젝트 전제에서 사용되는 객체들로 구성
+#### global
+- 프로젝트 전제에서 사용되는 객체들로 구성
 - common
     - 공통으로 사용되는 Value 객체들로 구성
     - 페이징 처리를 위한 Request
@@ -34,8 +45,13 @@
     - Exception Guide 에서 설명했던 코드들이 있음
 - util
     - 유틸성 클래스
-- infra
-    - infrastructure 관련된 코드들로 구성
+#### infra
+    - infrastructure 관련된 코드들로 구성  
+    - 대표적으로 이메일 알림, SMS 알림 등 외부 서비스에 대한 코드들이 존재  
+    - 그렇기 때문에 domain, global에 속하지 않고, 이 계층도 잘 관리해야 하는 대상이기에 별도의 디렉터리로 분리  
+    - SMS 메시지를 보내는 클라이언트   
+      - 국내 사용자에게는 KT SMS  
+      - 해외 사용자에게는 Amazon SMS  
 
 ![spring-initialzr.png](./img/spring-initialzr.png)
 

@@ -24,6 +24,10 @@ spring:
     default-locale: ko_KR
   # must not be empty의 한글 메시지입니다.
   messages.must-not-be-empty: 필수 입력입니다.
+  # 콘솔에 색상을 넣음
+  output:
+    ansi:
+      enabled: always
 
 
 

@@ -1,7 +1,7 @@
-package com.code.design.global.common;
+package com.code.design.global.error;
 
 
-import com.code.design.ErrorCode;
+import com.code.design.global.error.exception.ErrorCode;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

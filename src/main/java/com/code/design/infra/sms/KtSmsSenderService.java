@@ -1,8 +1,9 @@
-package com.code.design.infra;
+package com.code.design.infra.sms;
 
 
-import com.code.design.infra.KtSmsSenderClient.SendRequest;
-import com.code.design.infra.KtSmsSenderClient.SendResponse;
+import com.code.design.infra.sms.dto.SmsMessageRequest;
+import com.code.design.infra.sms.KtSmsSenderClient.SendRequest;
+import com.code.design.infra.sms.KtSmsSenderClient.SendResponse;
 
 public class KtSmsSenderService implements SmsSender {
     @Override

@@ -1,7 +1,8 @@
 package com.code.design;
 
 import com.code.design.doamin.member.domain.Member;
-import com.code.design.exception.EntityNotFoundException;
+import com.code.design.global.error.exception.EntityNotFoundException;
+import com.code.design.global.error.exception.ErrorCode;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

@@ -1,6 +1,6 @@
-package com.code.design.cart;
+package com.code.design.doamin.cart.application;
 
-import com.code.design.doamin.order.order.dao.CartRepository;
+import com.code.design.doamin.cart.dao.CartRepository;
 import com.code.design.doamin.order.order.domain.Order;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

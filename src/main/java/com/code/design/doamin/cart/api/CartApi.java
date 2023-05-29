@@ -1,13 +1,13 @@
-package com.code.design.cart;
+package com.code.design.doamin.cart.api;
 
 import java.util.List;
 
-import com.code.design.doamin.order.order.dao.CartRepository;
+import com.code.design.doamin.cart.dao.CartRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.code.design.doamin.order.order.domain.Cart;
+import com.code.design.doamin.cart.domain.Cart;
 
 @RestController
 @RequestMapping("/carts")

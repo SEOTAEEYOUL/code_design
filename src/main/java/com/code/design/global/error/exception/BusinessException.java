@@ -1,6 +1,6 @@
-package com.code.design.exception;
+package com.code.design.global.error.exception;
 
-import com.code.design.ErrorCode;
+import com.code.design.global.error.exception.ErrorCode;
 
 public class BusinessException extends RuntimeException {
     private final ErrorCode errorCode;

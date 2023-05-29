@@ -6,7 +6,7 @@ import static org.assertj.core.api.BDDAssertions.thenThrownBy;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-import com.code.design.doamin.order.order.domain.Coupon;
+import com.code.design.doamin.coupon.domain.Coupon;
 import org.junit.jupiter.api.Test;
 
 public class CouponTest {

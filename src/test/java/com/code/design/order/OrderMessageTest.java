@@ -9,7 +9,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import com.code.design.doamin.order.order.domain.MessageType;
-import com.code.design.doamin.order.order.domain.OrderMessage;
+import com.code.design.doamin.order.order.dto.OrderMessage;
 import org.junit.jupiter.api.Test;
 
 class OrderMessageTest {

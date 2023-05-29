@@ -5,16 +5,12 @@ import com.code.design.doamin.order.order.domain.Order;
 import com.code.design.order.OrderRequest;
 import com.code.design.order.OrderService;
 import com.code.design.order.OrderSheetRequest;
-import com.code.design.doamin.order.order.domain.MessageType;
-import com.code.design.doamin.order.order.domain.OrderMessage;
+import com.code.design.doamin.order.order.dto.OrderMessage;
 import jakarta.validation.Valid;
-import jakarta.validation.constraints.NotNull;
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Set;
 
 @RestController
 @RequestMapping("/api/orders")

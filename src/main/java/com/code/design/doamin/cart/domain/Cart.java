@@ -1,4 +1,4 @@
-package com.code.design.doamin.order.order.domain;
+package com.code.design.doamin.cart.domain;
 
 
 import jakarta.persistence.Column;

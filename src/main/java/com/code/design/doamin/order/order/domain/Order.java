@@ -3,6 +3,7 @@ package com.code.design.doamin.order.order.domain;
 
 import com.code.design.doamin.model.Address;
 import com.code.design.doamin.order.item.domain.OrderItem;
+import com.code.design.doamin.order.order.dto.OrderMessage;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;

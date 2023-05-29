@@ -1,4 +1,4 @@
-package com.code.design;
+package com.code.design.global.error.exception;
 
 
 // import lombok.Getter;

@@ -1,7 +1,8 @@
-package com.code.design.infra;
+package com.code.design.infra.sms;
 
-import com.code.design.infra.AmazonSmsClient.SendRequest;
-import com.code.design.infra.AmazonSmsClient.SendResponse;
+import com.code.design.infra.sms.dto.SmsMessageRequest;
+import com.code.design.infra.sms.AmazonSmsClient.SendRequest;
+import com.code.design.infra.sms.AmazonSmsClient.SendResponse;
 
 public class AmazonSmsSenderService implements SmsSender {
 

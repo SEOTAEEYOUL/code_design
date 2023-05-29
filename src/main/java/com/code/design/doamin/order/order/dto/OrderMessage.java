@@ -1,4 +1,4 @@
-package com.code.design.doamin.order.order.domain;
+package com.code.design.doamin.order.order.dto;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -6,6 +6,9 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import com.code.design.doamin.order.order.domain.MessageType;
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.util.ObjectUtils;
 
 
@@ -21,7 +24,8 @@ public class OrderMessage {
         this.type = ObjectUtils.isEmpty(type) ? null : type;
     }
 
-    public static OrderMessage of(Set<MessageType> types) {
+    @Contract("_ -> new")
+    public static @NotNull OrderMessage of(Set<MessageType> types) {
         return new OrderMessage(joining(types));
     }
 
@@ -33,7 +37,7 @@ public class OrderMessage {
         return new ArrayList<>(doSplit());
     }
 
-    private static String joining(Set<MessageType> types) {
+    private static String joining(@NotNull Set<MessageType> types) {
         return types.stream()
             .map(Enum::name)
             .collect(Collectors.joining(","));

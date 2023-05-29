@@ -1,6 +1,6 @@
 package com.code.design.order;
 
-import com.code.design.cart.CartService;
+import com.code.design.doamin.cart.application.CartService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.event.EventListener;
 import org.springframework.scheduling.annotation.Async;

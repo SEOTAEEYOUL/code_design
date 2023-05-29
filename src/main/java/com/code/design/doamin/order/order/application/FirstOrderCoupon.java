@@ -1,6 +1,6 @@
 package com.code.design.doamin.order.order.application;
 
-import com.code.design.doamin.order.order.domain.Coupon;
+import com.code.design.doamin.coupon.domain.Coupon;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

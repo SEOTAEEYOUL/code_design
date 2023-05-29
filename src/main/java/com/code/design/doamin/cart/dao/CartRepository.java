@@ -1,6 +1,6 @@
-package com.code.design.doamin.order.order.dao;
+package com.code.design.doamin.cart.dao;
 
-import com.code.design.doamin.order.order.domain.Cart;
+import com.code.design.doamin.cart.domain.Cart;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
