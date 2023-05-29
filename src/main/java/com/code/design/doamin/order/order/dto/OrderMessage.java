@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import com.code.design.doamin.order.order.domain.MessageType;
+import com.code.design.validation.domain.MessageType;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.util.ObjectUtils;

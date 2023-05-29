@@ -1,8 +1,8 @@
 # 유지보수하기 좋은 코드 디자인
 
 
-> [패스트 캠퍼스 유지보수하기 좋은 코드 디자인](https://github.com/cheese10yun/code-design)
-
+> [패스트 캠퍼스 유지보수하기 좋은 코드 디자인](https://github.com/cheese10yun/code-design)  
+> [Spring Guide - Directory 패키기 구조 가이드](https://cheese10yun.github.io/spring-guide-directory/#null)  
 
 ## 패키지 구조
 
@@ -50,8 +50,8 @@
     - 대표적으로 이메일 알림, SMS 알림 등 외부 서비스에 대한 코드들이 존재  
     - 그렇기 때문에 domain, global에 속하지 않고, 이 계층도 잘 관리해야 하는 대상이기에 별도의 디렉터리로 분리  
     - SMS 메시지를 보내는 클라이언트   
-      - 국내 사용자에게는 KT SMS  
-      - 해외 사용자에게는 Amazon SMS  
+        - 국내 사용자에게는 KT SMS  
+        - 해외 사용자에게는 Amazon SMS  
 
 ![spring-initialzr.png](./img/spring-initialzr.png)
 

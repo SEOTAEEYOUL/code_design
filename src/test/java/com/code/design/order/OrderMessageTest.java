@@ -8,7 +8,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-import com.code.design.doamin.order.order.domain.MessageType;
+import com.code.design.validation.domain.MessageType;
 import com.code.design.doamin.order.order.dto.OrderMessage;
 import org.junit.jupiter.api.Test;
 

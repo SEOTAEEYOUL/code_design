@@ -1,7 +1,7 @@
 package com.code.design.doamin.order.order.api;
 
 import com.code.design.doamin.order.order.dao.OrderRepository;
-import com.code.design.doamin.order.order.domain.Order;
+import com.code.design.validation.domain.Order;
 import com.code.design.order.OrderRequest;
 import com.code.design.order.OrderService;
 import com.code.design.order.OrderSheetRequest;

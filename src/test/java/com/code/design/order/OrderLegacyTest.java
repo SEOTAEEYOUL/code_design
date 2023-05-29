@@ -3,7 +3,7 @@ package com.code.design.order;
 import static org.assertj.core.api.BDDAssertions.then;
 import static org.assertj.core.api.BDDAssertions.thenThrownBy;
 
-import com.code.design.doamin.order.order.domain.OrderLegacy;
+import com.code.design.validation.domain.OrderLegacy;
 import org.junit.jupiter.api.Test;
 
 

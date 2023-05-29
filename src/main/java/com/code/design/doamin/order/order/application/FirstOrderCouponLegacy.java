@@ -1,6 +1,6 @@
 package com.code.design.doamin.order.order.application;
 
-import com.code.design.doamin.order.order.domain.CouponLegacy;
+import com.code.design.doamin.coupon.domain.CouponLegacy;
 
 import java.time.LocalDate;
 

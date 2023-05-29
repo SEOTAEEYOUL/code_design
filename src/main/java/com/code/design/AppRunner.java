@@ -2,12 +2,12 @@ package com.code.design;
 
 import com.code.design.doamin.member.dao.MemberRepository;
 import com.code.design.doamin.member.domain.Member;
-import com.code.design.doamin.cart.dao.CartRepository;
+import com.code.design.doamin.order.cart.dao.CartRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
-import com.code.design.doamin.cart.domain.Cart;
+import com.code.design.doamin.order.cart.domain.Cart;
 
 
 @Component

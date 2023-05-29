@@ -1,7 +1,8 @@
 package com.code.design.order;
 
 import com.code.design.doamin.order.order.dao.OrderRepository;
-import com.code.design.doamin.order.order.domain.Order;
+import com.code.design.validation.domain.Order;
+import com.code.design.validation.domain.OrderCompletedEvent;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
