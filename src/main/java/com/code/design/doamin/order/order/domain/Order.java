@@ -15,7 +15,8 @@ import java.util.List;
 @Entity
 @Table(name = "orders")
 @Getter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+// @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@NoArgsConstructor(force=true) // 아무 인수가 없는 생성자를 생성, 변수를 초기값으로 설정
 public class Order {
 
     @Id
@@ -27,7 +28,7 @@ public class Order {
 
 
 
-    @Transient
+    // @Transient
     @Column(name = "product_id", nullable = false)
     // 읽기 전용 속성을 설정하여 중복된 매핑 오류 해결
     // @Column(name = "product_id", nullable = false, insertable = false, updatable = false)
@@ -43,6 +44,7 @@ public class Order {
     @ElementCollection
     @CollectionTable(name = "orders_item", joinColumns = @JoinColumn(name = "id", insertable = false, updatable = false))
     // @Column(insertable=false, updatable=false) // 값이 하나고 내가 정의한 것이 아니기 때문에 예외적으로 컬럼명 변경 허용
+    @Embedded
     final private List<OrderItem> orderItemList = new ArrayList<>();
 
 
@@ -52,13 +54,16 @@ public class Order {
     @Embedded
     private Address address;
 
+    @Embedded
     private OrderMessage message;
 
 
+    @Builder
     public Order(OrderMessage orderMessage) {
         this.message = orderMessage;
     }
 
+    @Builder
     public Order(Long productId, BigDecimal productAmount, Orderer orderer) {
         this.productId     = productId;
         this.productAmount = productAmount;
