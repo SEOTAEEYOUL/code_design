@@ -21,31 +21,32 @@ public class Order {
 
     @Id
     // 읽기 전용 속성 추가로 중복된 매핑 오류가 해결
-    // @Column(insertable=false, updatable=false)
+    @Column(name="id", insertable=false, updatable=false)
     // @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    // @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
 
 
     // @Transient
-    @Column(name = "product_id", nullable = false)
+    // @Column(name = "product_id", nullable = false)
     // 읽기 전용 속성을 설정하여 중복된 매핑 오류 해결
-    // @Column(name = "product_id", nullable = false, insertable = false, updatable = false)
+    @Column(name = "product_id", nullable = false, insertable = false, updatable = false)
     private Long productId;
 
 
-    @Column(name = "product_amount", nullable = false)
+    // @Column(name = "product_amount", nullable = false)
     // 읽기 전용 속성을 설정하여 중복된 매핑 오류 해결
     // @Column(name = "product_amount", nullable = false, insertable = false, referencedColumnName="id", updatable = false)
+    @Column(name = "product_amount", nullable = false, insertable = false, updatable = false)
     private BigDecimal productAmount;
 
 
-    @ElementCollection
-    @CollectionTable(name = "orders_item", joinColumns = @JoinColumn(name = "id", insertable = false, updatable = false))
-    // @Column(insertable=false, updatable=false) // 값이 하나고 내가 정의한 것이 아니기 때문에 예외적으로 컬럼명 변경 허용
-    @Embedded
-    final private List<OrderItem> orderItemList = new ArrayList<>();
+//    @ElementCollection
+//    @CollectionTable(name = "orders_item", joinColumns = @JoinColumn(name = "orders_items", insertable = false, updatable = false))
+//    // @Column(insertable=false, updatable=false) // 값이 하나고 내가 정의한 것이 아니기 때문에 예외적으로 컬럼명 변경 허용
+//    @Embedded
+//    private final List<OrderItem> orderItemList = new ArrayList<>();
 
 
     @Embedded
