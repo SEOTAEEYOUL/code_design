@@ -47,12 +47,12 @@ public class OrderApi {
     }
 
 
-    @PostMapping
-    public Order create(@RequestBody @Valid OrderRequest request) {
-        final Order order = new Order(OrderMessage.of(request.getMessageType()));
-
-        return order;
-    }
+//    @PostMapping
+//    public Order create(@RequestBody @Valid OrderRequest request) {
+//        final Order order = new Order(OrderMessage.of(request.getMessageType()));
+//
+//        return order;
+//    }
 
 
     @PostMapping

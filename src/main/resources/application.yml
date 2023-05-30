@@ -1,35 +1,68 @@
 server:
   port: 8181
+  error:
+    whitelabel:
+      enabled: true
+
+debug: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - "*"
+
+logging:
+  level:
+    root: info
+  org:
+    hibernate:
+      SQL: debug
+      type:
+        descriptor:
+          sql: trace
 
 spring:
+  devtools:
+    livereload:
+      enabled: true
+#   timezone: Asia/Seoul
   datasource:
-    url: jdbc:mysql//localhost:3306/design?serverTime=Asia/Seoul&characterEncoding=UTF-8
+    url: jdbc:mysql://localhost:3306/design?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
     username: design
     password: dlatl!00
+    driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
     database: mysql
-    database-platform: org.hibernate.dialect.MySQL8Dialect
+    database-platform: org.hibernate.dialect.MySQLDialect
+    # MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+    # database-platform: org.hibernate.dialect.MySQLDialect
     # database: h2
-    datasource:
-      url: jdbc:mysql//localhost:3306/design?serverTime=Asia/Seoul&characterEncoding=UTF-8
-      username: design
-      password: dlatl!00
+    # datasource:
+    #   url: jdbc:mysql://localhost:3306/getinline?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    #   driver-class-name: com.mysql.cj.jdbc.Driver
+    #   username: design
+    #   password: dlatl!00
     hibernate:
-      ddl-auto: create
+    #   ddl-auto: create
+    #   ddl-auto: validate
+      hbm2ddl:
+        auto: update
     show-sql: true
     open-in-view: false
     properties:
       hibernate:
         format_sql: true
         use_sql_comments: true
+        default_batch_fetch_size: 100
   h2:
     console:
       # devtools 의 환경에서는 true 이므로, 명시적으로 false 로 설정함
-      enabled: true
+      enabled: false
   # timezone: UTC
-  timezone: Asia/Seoul
-  messages:
+
     basename: messages
     encoding: UTF-8
     # basename은 messages.properties 파일의 경로입니다.
@@ -48,13 +81,4 @@ spring:
 
 
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include:
-          - "*"
 
-logging:
-  level:
-    root: info

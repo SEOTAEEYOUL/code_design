@@ -7,7 +7,10 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import com.code.design.doamin.member.dao.MemberRepository;
 import com.code.design.doamin.member.domain.Member;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.jetbrains.annotations.NotNull;
+
+import jakarta.validation.constraints.NotNull;
+
+// import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
