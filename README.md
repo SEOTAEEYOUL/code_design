@@ -237,8 +237,9 @@ gradle bootRun
 ```
 PS > ./gradlew bootRun
 
+
 > Task :bootRun
- 
+
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
 ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
@@ -247,30 +248,30 @@ PS > ./gradlew bootRun
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.1.0)
 
-2023-06-01T15:10:51.398+09:00  INFO 13096 --- [  restartedMain] com.code.design.CodeDesignApplication    : Starting CodeDesignApplication using Java 17.0.6 with PID 13096 (D:\workspace\Fastcampus\code_design\build\classes\java\main started by 07456 in D:\workspace\Fastcampus\code_design)
-2023-06-01T15:10:51.401+09:00  INFO 13096 --- [  restartedMain] com.code.design.CodeDesignApplication    : No active profile set, falling back to 1 default profile: "default"
-2023-06-01T15:10:51.444+09:00  INFO 13096 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2023-06-01T15:10:51.444+09:00  INFO 13096 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2023-06-01T15:10:52.270+09:00  INFO 13096 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-06-01T15:10:52.322+09:00  INFO 13096 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48 ms. Found 4 JPA repository interfaces.
-2023-06-01T15:10:52.846+09:00  INFO 13096 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8181 (http)
-2023-06-01T15:10:52.854+09:00  INFO 13096 --- [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-06-01T15:10:52.854+09:00  INFO 13096 --- [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
-2023-06-01T15:10:52.915+09:00  INFO 13096 --- [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-06-01T15:10:52.916+09:00  INFO 13096 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1470 ms
-2023-06-01T15:10:53.091+09:00  INFO 13096 --- [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-06-01T15:10:53.127+09:00  INFO 13096 --- [  restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.2.Final
-2023-06-01T15:10:53.129+09:00  INFO 13096 --- [  restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2023-06-01T15:10:53.227+09:00  INFO 13096 --- [  restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-06-01T15:10:53.322+09:00  INFO 13096 --- [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2023-06-01T15:10:53.333+09:00  INFO 13096 --- [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-06-01T15:10:53.568+09:00  INFO 13096 --- [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7a638979
-2023-06-01T15:10:53.570+09:00  INFO 13096 --- [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-06-01T15:10:53.612+09:00  INFO 13096 --- [  restartedMain] org.hibernate.orm.dialect                : HHH035001: Using dialect: org.hibernate.dialect.MySQLDialect, version: 8.0.32
-2023-06-01T15:10:53.877+09:00  INFO 13096 --- [  restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-06-01T15:10:54.457+09:00  INFO 13096 --- [  restartedMain] o.h.m.i.EntityInstantiatorPojoStandard   : HHH000182: No default (no-argument) constructor for class: com.code.design.doamin.member.domain.Student (class must be instantiated by Interceptor)
-2023-06-01T15:10:54.534+09:00  INFO 13096 --- [  restartedMain] o.h.m.internal.PojoInstantiatorImpl      : HHH000182: No default (no-argument) constructor for class: com.code.design.doamin.order.order.domain.OrderMessage (class must be instantiated by Interceptor)
-2023-06-01T15:10:54.738+09:00  INFO 13096 --- [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-01T15:46:42.277+09:00  INFO 7068 --- [  restartedMain] com.code.design.CodeDesignApplication    : Starting CodeDesignApplication using Java 17.0.6 with PID 7068 (D:\workspace\Fastcampus\code_design\build\classes\java\main started by 07456 in D:\workspace\Fastcampus\code_design)
+2023-06-01T15:46:42.279+09:00  INFO 7068 --- [  restartedMain] com.code.design.CodeDesignApplication    : No active profile set, falling back to 1 default profile: "default"
+2023-06-01T15:46:42.317+09:00  INFO 7068 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-06-01T15:46:42.317+09:00  INFO 7068 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-06-01T15:46:43.109+09:00  INFO 7068 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-01T15:46:43.167+09:00  INFO 7068 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 52 ms. Found 4 JPA repository interfaces.
+2023-06-01T15:46:43.645+09:00  INFO 7068 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8181 (http)
+2023-06-01T15:46:43.652+09:00  INFO 7068 --- [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-01T15:46:43.652+09:00  INFO 7068 --- [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-06-01T15:46:43.709+09:00  INFO 7068 --- [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-06-01T15:46:43.710+09:00  INFO 7068 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1392 ms
+2023-06-01T15:46:43.879+09:00  INFO 7068 --- [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-01T15:46:43.912+09:00  INFO 7068 --- [  restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.2.Final
+2023-06-01T15:46:43.914+09:00  INFO 7068 --- [  restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-06-01T15:46:44.010+09:00  INFO 7068 --- [  restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-06-01T15:46:44.115+09:00  INFO 7068 --- [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-06-01T15:46:44.127+09:00  INFO 7068 --- [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-06-01T15:46:44.334+09:00  INFO 7068 --- [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@15c7c820
+2023-06-01T15:46:44.336+09:00  INFO 7068 --- [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-06-01T15:46:44.370+09:00  INFO 7068 --- [  restartedMain] org.hibernate.orm.dialect                : HHH035001: Using dialect: org.hibernate.dialect.MySQLDialect, version: 8.0.32
+2023-06-01T15:46:44.566+09:00  INFO 7068 --- [  restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-06-01T15:46:44.934+09:00  INFO 7068 --- [  restartedMain] o.h.m.i.EntityInstantiatorPojoStandard   : HHH000182: No default (no-argument) constructor for class: com.code.design.doamin.member.domain.Student (class must be instantiated by Interceptor)
+2023-06-01T15:46:44.983+09:00  INFO 7068 --- [  restartedMain] o.h.m.internal.PojoInstantiatorImpl      : HHH000182: No default (no-argument) constructor for class: com.code.design.doamin.order.order.domain.OrderMessage (class must be instantiated by Interceptor)
+2023-06-01T15:46:45.107+09:00  INFO 7068 --- [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
 Hibernate:
     alter table coupon
        drop
@@ -391,13 +392,13 @@ Hibernate:
        add constraint FK80vls36avhp4yl7h8apkqm0ek
        foreign key (order_id)
        references orders (order_id)
-2023-06-01T15:10:55.177+09:00  INFO 13096 --- [  restartedMain] o.h.t.s.i.e.GenerationTargetToDatabase   : HHH000476: Executing script '[injected ScriptSourceInputNonExistentImpl script]'
-2023-06-01T15:10:55.179+09:00  INFO 13096 --- [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-06-01T15:10:56.074+09:00  WARN 13096 --- [  restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
-2023-06-01T15:10:56.352+09:00  INFO 13096 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2023-06-01T15:10:56.357+09:00  INFO 13096 --- [  restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 13 endpoint(s) beneath base path '/actuator'
-2023-06-01T15:10:56.428+09:00  INFO 13096 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8181 (http) with context path ''
-2023-06-01T15:10:56.440+09:00  INFO 13096 --- [  restartedMain] com.code.design.CodeDesignApplication    : Started CodeDesignApplication in 5.341 seconds (process running for 6.116)
+2023-06-01T15:46:45.408+09:00  INFO 7068 --- [  restartedMain] o.h.t.s.i.e.GenerationTargetToDatabase   : HHH000476: Executing script '[injected ScriptSourceInputNonExistentImpl script]'
+2023-06-01T15:46:45.409+09:00  INFO 7068 --- [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-01T15:46:46.095+09:00  WARN 7068 --- [  restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2023-06-01T15:46:46.335+09:00  INFO 7068 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-06-01T15:46:46.339+09:00  INFO 7068 --- [  restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 13 endpoint(s) beneath base path '/actuator'
+2023-06-01T15:46:46.404+09:00  INFO 7068 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8181 (http) with context path ''
+2023-06-01T15:46:46.413+09:00  INFO 7068 --- [  restartedMain] com.code.design.CodeDesignApplication    : Started CodeDesignApplication in 4.426 seconds (process running for 5.186)
 Hibernate:
     /* insert for
         com.code.design.doamin.member.domain.Member */insert
@@ -461,7 +462,13 @@ Hibernate:
         cart (product_id)
     values
         (?)
-<==========---> 80% EXECUTING [21s]
+2023-06-01T15:49:14.760+09:00  INFO 25068 --- [nio-8181-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-01T15:49:14.760+09:00  INFO 25068 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-06-01T15:49:14.761+09:00  INFO 25068 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+<==========---> 80% EXECUTING [50s]
 > :bootRun
+
 ```
 
+#### http://localhost:8181/actuator  
+![actuator.png](./img/actuator.png)  
