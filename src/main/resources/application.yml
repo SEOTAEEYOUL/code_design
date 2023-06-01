@@ -15,19 +15,19 @@ management:
 
 logging:
   level:
-    root: info
-  org:
-    hibernate:
-      SQL: debug
-      type:
-        descriptor:
-          sql: trace
+    root: info # root level(전체) 로깅 레벨 지정
+    org:
+        hibernate:
+        SQL: debug
+        type:
+            descriptor:
+              sql: trace  # ? 에 어떤 값이 들어갔는지 확인하기
 
 spring:
   devtools:
     livereload:
       enabled: true
-#   timezone: Asia/Seoul
+  
   datasource:
     url: jdbc:mysql://localhost:3306/design?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
     username: design
@@ -46,33 +46,25 @@ spring:
     #   username: design
     #   password: dlatl!00
     hibernate:
-      ddl-auto: create
-    #   ddl-auto: validate
-      hbm2ddl:
-        auto: update
-    show-sql: true
+      ddl-auto: create        # 생성(스키마 생성)
+      # ddl-auto: update      # 업데이트(변경된 경우 스키마 업데이트)
+      # ddl-auto: validate    # 유효성 검사 (스키마 유효성 검사)
+      # ddl-auto: none        # 아무것도 하지 않음
+      # ddl-auto: create-drop # 스키마를 생성하고 마지막에 드롭
+    show-sql: true            # query 를 보여줌
     open-in-view: false
     properties:
       hibernate:
-        format_sql: true
-        use_sql_comments: true
-        default_batch_fetch_size: 100
+        format_sql: true               # 예쁘게 보기
+        use_sql_comments: true         # 추가적인 주석 표시
+        default_batch_fetch_size: 100  # 배치 처리
   h2:
     console:
       # devtools 의 환경에서는 true 이므로, 명시적으로 false 로 설정함
       enabled: false
-  # timezone: UTC
 
-    basename: messages
-    encoding: UTF-8
-    # basename은 messages.properties 파일의 경로입니다.
-    # encoding은 메시지 파일의 인코딩입니다.
-    # default-locale은 메시지의 기본 언어입니다.
-    # Springboot 애플리케이션의 모든 출력 메시지가 한글로 출력
-    default-locale: ko_KR
-  # must not be empty의 한글 메시지입니다.
-  messages.must-not-be-empty: 필수 입력입니다.
-  # 콘솔에 색상을 넣음
+
+  # ansi 터미널을 지원한다면 console에 색상 추가 가능
   output:
     ansi:
       enabled: always
