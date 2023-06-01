@@ -36,12 +36,12 @@ public class OrderApi {
      * @param dto
      * @return
      */
-    @PostMapping
+    @PostMapping("/doOrder2")
     public OrderSheetRequest doOrder(@RequestBody @Valid final OrderSheetRequest dto) {
         return dto;
     }
 
-    @PostMapping
+    @PostMapping("/order")
     public OrderSheetRequest order(@RequestBody @Valid final OrderSheetRequest dto) {
         return dto;
     }
@@ -55,12 +55,12 @@ public class OrderApi {
 //    }
 
 
-    @PostMapping
+    @PostMapping("/doOrder")
     public void doOrder(@RequestBody OrderRequest dto) {
         orderService.doOrder(dto);
     }
 
-    @GetMapping
+    @GetMapping("/getOrders")
     public List<Order> getOrders(){
         return orderRepository.findAll();
     }

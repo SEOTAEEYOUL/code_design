@@ -19,7 +19,7 @@ public class MemberApi {
     private final MemberSignUpService memberSignUpService;
     private final MemberRepository memberRepository;
 
-    @GetMapping
+    @GetMapping("/all")
     public List<Member> getAll() {
         return memberRepository.findAll();
     }
@@ -38,7 +38,7 @@ public class MemberApi {
 //        return member;
 //    }
 
-    @PostMapping
+    @PostMapping("/create")
     public Member create(@RequestBody @Valid final SignUpRequest dto) {
         return memberRepository.save(Member.builder()
                         .name(dto.getName())
@@ -46,12 +46,12 @@ public class MemberApi {
                         .build());
     }
 
-    @GetMapping
+    @GetMapping("/create")
     public List<Member> getMembers(){
         return memberRepository.findAll();
     }
 
-    @PostMapping
+    @PostMapping("/signup")
     public void signUp(@RequestBody MemberSignUpRequest dto) {
         memberSignUpService.signUp(dto);
     }

@@ -46,7 +46,7 @@ spring:
     #   username: design
     #   password: dlatl!00
     hibernate:
-    #   ddl-auto: create
+      ddl-auto: create
     #   ddl-auto: validate
       hbm2ddl:
         auto: update

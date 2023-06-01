@@ -56,6 +56,7 @@ public class Member {
     public Member(String name, String email) {
         this.name = name;
         this.email = email;
+        this.password = "dlatl!00";
         this.createAt = LocalDateTime.now( );
     }
 

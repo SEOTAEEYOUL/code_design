@@ -24,6 +24,7 @@ public class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="order_id", insertable=false, updatable=false)
     private Long id;
 
     @Column(name = "product_id", nullable = false)
@@ -39,26 +40,27 @@ public class Order {
     @Embedded
     private Address address;
 
-   @Embedded
-   private OrderMessage message;
+    @Embedded
+    private OrderMessage message;
 
 
-   public Order(OrderMessage orderMessage) {
-       this.message = orderMessage;
-   }
+    public Order(OrderMessage orderMessage) {
+        this.message = orderMessage;
+    }
 
 
     public Order(Long productId, BigDecimal productAmount, Orderer orderer) {
-        this.productId = productId;
+        this.productId     = productId;
         this.productAmount = productAmount;
-        this.orderer = orderer;
+        this.orderer       = orderer;
     }
 
     @Builder
-    public Order(Address address) {
+    public Order(Address address, OrderMessage message) {
         // Assert.notNull(address, "address must not be null");
 
         this.address = address;
+        this.message = message; // 2023.06.01
     }
 }
 
